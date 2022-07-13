@@ -70,16 +70,16 @@
 #--------------------------------------------------------------------------------
 name: CI/CD Pipeline
 on: push
- defaults:
-   run:
-     working-directory: modern-web-app
- env:
-   NODE_VERSION: "14.17"
- jobs:
-   test:
-     name: Test
-     runs-on: ubuntu-latest
-     
+defaults:
+  run:
+    working-directory: modern-web-app
+env:
+  NODE_VERSION: "14.17"
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    
     build:
         name: Build
         runs-on: ubuntu-latest
@@ -118,4 +118,4 @@ on: push
                 path: artifact_to_deploy
             - name: Deploy to prod environment
               run: |
-               npm run deploy:simulate -- production
+              npm run deploy:simulate -- production
